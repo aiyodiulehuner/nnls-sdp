@@ -1,35 +1,35 @@
-%%**********************************************************************
-%%  This is a Matlab implementation of an accelerated proximal gradient 
-%%  algorithm for solving the nuclear norm regularized least squares 
-%%  or regularized semidefinite least squares problem: 
-%%
-%%  min_X {f(X) + mu*sum(svd(X))}
-%%  or 
-%%  min_X { f(X) + mu*trace(X) : X psd } 
-%%  where f(X) = 0.5*norm(A(X)-b)^2 + 0.5*rho*norm(X,'fro')^2.
-%%
-%%  At kth iteration, we solve the following subproblem to get Xk:
-%%
-%%  min_X {0.5*L*norm(X-(Yk-gradf(Yk)/L),'fro')^2 + mu*sum(svd(X))}
-%%  or
-%%  min_X {0.5*L*norm(X-(Yk-gradf(Yk)/L),'fro')^2 + mu*trace(X) : X psd}
-%%  where L is a Lipschitz constant, Yk = beta1*Xk - beta2*Xk_1.
-%%
-%% Input: nr = size(X,1) 
-%%        nc = size(X,2)
-%%        problem_type = 'NNLS' for nuclear norm regularized LS problem
-%%                     = 'SDLS' for regularized semidefinite LS problem
-%%        Amap = function handle to evaluation A(X)
-%%        ATmap = function handle to evaluation the adjoint AT(y)
-%%
-%% Output: 
-%% if X is numeric, then X = standard nrxnc matrix
-%% if X is a structure, then matrix = X.U*X.V'; 
-%% 
-%% NNLS, version 0:  
-%% Copyright (c) Feb 2009 by
-%% Kim-Chuan Toh and Sangwoon Yun 
-%%**********************************************************************
+%**********************************************************************
+%  This is a Matlab implementation of an accelerated proximal gradient 
+%  algorithm for solving the nuclear norm regularized least squares 
+%  or regularized semidefinite least squares problem: 
+%
+%  min_X {f(X) + mu*sum(svd(X))}
+%  or 
+%  min_X { f(X) + mu*trace(X) : X psd } 
+%  where f(X) = 0.5*norm(A(X)-b)^2 + 0.5*rho*norm(X,'fro')^2.
+%
+%  At kth iteration, we solve the following subproblem to get Xk:
+%
+%  min_X {0.5*L*norm(X-(Yk-gradf(Yk)/L),'fro')^2 + mu*sum(svd(X))}
+%  or
+%  min_X {0.5*L*norm(X-(Yk-gradf(Yk)/L),'fro')^2 + mu*trace(X) : X psd}
+%  where L is a Lipschitz constant, Yk = beta1*Xk - beta2*Xk_1.
+%
+% Input: nr = size(X,1) 
+%        nc = size(X,2)
+%        problem_type = 'NNLS' for nuclear norm regularized LS problem
+%                     = 'SDLS' for regularized semidefinite LS problem
+%        Amap = function handle to evaluation A(X)
+%        ATmap = function handle to evaluation the adjoint AT(y)
+%
+% Output: 
+% if X is numeric, then X = standard nrxnc matrix
+% if X is a structure, then matrix = X.U*X.V'; 
+% 
+% NNLS, version 0:  
+% Copyright (c) Feb 2009 by
+% Kim-Chuan Toh and Sangwoon Yun 
+%**********************************************************************
 
    function [X,iter,ttime,sd,runhist] = ...
              APGL(nr,nc,problem_type,Amap,ATmap,bb,mutarget,rhotarget,par)
