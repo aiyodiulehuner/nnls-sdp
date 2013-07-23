@@ -1,19 +1,19 @@
-%%************************************************************************
-%% Kernal regularization problem: 
-%% 
-%% min_{X psd} sum_{ij\in nnz(W)} (<Aij,X>-dij)^2 + mu*Tr(X)
-%% where Aij = eij*eij', eij = ei-ej.
-%%
-%% For details, see: 
-%% [1] Lu, F., Keles, S., Wright, S., and Wahba, G. 
-%%     Framework for Kernel Regularization With Application to Protein 
-%%     Clustering, 
-%%     Proceedings of the National Academy of Sciences, 102 (2005).
-%%
-%% NNLS, version 0:
-%% Copyright (c) 2009 by
-%% Kim-Chuan Toh and Sangwoon Yun
-%%************************************************************************
+%************************************************************************
+% Kernal regularization problem: 
+% 
+% min_{X psd} sum_{ij\in nnz(W)} (<Aij,X>-dij)^2 + mu*Tr(X)
+% where Aij = eij*eij', eij = ei-ej.
+%
+% For details, see: 
+% [1] Lu, F., Keles, S., Wright, S., and Wahba, G. 
+%     Framework for Kernel Regularization With Application to Protein 
+%     Clustering, 
+%     Proceedings of the National Academy of Sciences, 102 (2005).
+%
+% NNLS, version 0:
+% Copyright (c) 2009 by
+% Kim-Chuan Toh and Sangwoon Yun
+%************************************************************************
 
    clear all
 

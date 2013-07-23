@@ -1,6 +1,6 @@
 
 
-  function Aty = ATmap_Lu(y,G); 
+  function Aty = ATmap_Lu(y,G)
   
   
   [nr,nc] = size(G); 

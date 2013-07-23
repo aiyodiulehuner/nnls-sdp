@@ -1,19 +1,19 @@
-%%************************************************************************
-%% run multivariate linear regression problems: 
-%% 
-%% min { 0.5*norm(H-G*X,'fro')^2 + mu*sum(svd) } 
-%% where G (nrxnr), H (nrxnc) are given matrices
-%%
-%% For details, see: 
-%% [1] M. Yuan, A. Ekici, Z. Lu and R.D.C. Monteiro,  
-%%     Dimension Reduction and Coefficient Estimation in the 
-%%     Multivariate Linear Regression, 
-%%     Journal of the Royal Statistical Society, Series B, 69(3):329-346, 2007.
-%%
-%% NNLS, version 0: 
-%% Copyright (c) 2009 by
-%% Kim-Chuan Toh and Sangwoon Yun 
-%%************************************************************************
+%************************************************************************
+% run multivariate linear regression problems: 
+% 
+% min { 0.5*norm(H-G*X,'fro')^2 + mu*sum(svd) } 
+% where G (nrxnr), H (nrxnc) are given matrices
+%
+% For details, see: 
+% [1] M. Yuan, A. Ekici, Z. Lu and R.D.C. Monteiro,  
+%     Dimension Reduction and Coefficient Estimation in the 
+%     Multivariate Linear Regression, 
+%     Journal of the Royal Statistical Society, Series B, 69(3):329-346, 2007.
+%
+% NNLS, version 0: 
+% Copyright (c) 2009 by
+% Kim-Chuan Toh and Sangwoon Yun 
+%************************************************************************
 
     clear all;
 
