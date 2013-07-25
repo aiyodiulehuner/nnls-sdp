@@ -1,16 +1,16 @@
-%%**********************************************************************
-%% find the vector obtained from the matrix
-%% X = U*V' by extracting the entries with indices specified 
-%% in (II,Jcol), which is in compressed sparse column format. 
-%%
-%% Input: X is a matrix, or a structure containing the factors U,V. 
-%%
-%% NNLS, version 0: 
-%% Copyright (c) 2009 by
-%% Kim-Chuan Toh and Sangwoon Yun 
-%%**********************************************************************
+%**********************************************************************
+% find the vector obtained from the matrix
+% X = U*V' by extracting the entries with indices specified 
+% in (II,Jcol), which is in compressed sparse column format. 
+%
+% Input: X is a matrix, or a structure containing the factors U,V. 
+%
+% NNLS, version 0: 
+% Copyright (c) 2009 by
+% Kim-Chuan Toh and Sangwoon Yun 
+%**********************************************************************
 
-   function xx = Amap_MatComp(X,II,Jcol); 
+   function xx = Amap_MatComp(X,II,Jcol)
 
    if isnumeric(X) 
       nn = length(II); 

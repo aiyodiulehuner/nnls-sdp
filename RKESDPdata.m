@@ -1,11 +1,11 @@
-%%*************************************************************************
-%% generate SDP data corresponding to 
-%%
-%% min_{X psd} sum_{ij\in nnz(W)} (<Aij,X>-dij)^2 + lam*Tr(X)
-%%
-%% input: DD = (npts)x(npts) dis-similar matrix 
-%% 
-%%*************************************************************************
+%*************************************************************************
+% generate SDP data corresponding to 
+%
+% min_{X psd} sum_{ij\in nnz(W)} (<Aij,X>-dij)^2 + lam*Tr(X)
+%
+% input: DD = (npts)x(npts) dis-similar matrix 
+% 
+%*************************************************************************
 
     function  [blk,At,bb,numeq] = RKESDPdata(DD,WW); 
   
