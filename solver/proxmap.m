@@ -43,10 +43,10 @@
              end
              countmax = 1; 
           else
-             [U,S,V] = lansvd(HH,sv,'L',options);
+             [U,S,V] = saga.utils.mylansvd(HH,sv,'L',options);
           end
        else
-          [U,S,V] = lansvd('matvec_PP','matvectransp_PP',nr,nc,sv,'L',options,param);
+          [U,S,V] = saga.utils.mylansvd('matvec_PP','matvectransp_PP',nr,nc,sv,'L',options,param);
        end
        d = diag(S);
        sd = max(0,d-rho);

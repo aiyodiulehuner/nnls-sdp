@@ -35,10 +35,10 @@
              [U,S] = mexeig(full(HH));
              countmax = 1; 
           else
-             [U,S] = laneig(HH,sv,'AL',options);
+             [U,S] = saga.utils.mylaneig(HH,sv,'AL',options);
           end
        else
-          [U,S] = laneig('matvec_PP',nr,sv,'AL',options,param);
+          [U,S] = saga.utils.mylaneig('matvec_PP',nr,sv,'AL',options,param);
        end       
        [d,idx] = sort(full(diag(S))); 
        d = d(end:-1:1); 
